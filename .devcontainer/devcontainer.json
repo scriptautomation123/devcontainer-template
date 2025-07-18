@@ -1,0 +1,53 @@
+{
+  "name": "Oracle + Vault Dev Environment",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/devcontainer-template",
+  "onCreateCommand": "bash .devcontainer/validate-env.sh && bash .devcontainer/start-containers.sh",
+  "postCreateCommand": "echo 'Environment setup complete!'",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21"
+    },
+    "ghcr.io/devcontainers/features/maven:1": {
+      "version": "latest"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.vscode-json",
+        "redhat.java",
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  },
+  "forwardPorts": [
+    1521,
+    8200,
+    1389,
+    1390,
+    1391,
+    8080
+  ],
+  "portsAttributes": {
+    "1521": {
+      "label": "Oracle Database"
+    },
+    "8200": {
+      "label": "Vault Server"
+    },
+    "1389": {
+      "label": "Mock LDAP 1"
+    },
+    "1390": {
+      "label": "Mock LDAP 2"
+    },
+    "1391": {
+      "label": "Mock LDAP 3"
+    },
+    "8080": {
+      "label": "PlantUML Server"
+    }
+  }
+}
