@@ -1,0 +1,31 @@
+
+Here’s how you can implement all the suggestions for a template-friendly, flexible devcontainer setup:
+
+2. Avoid Hardcoding Repository Names
+In scripts (e.g., validate-env.sh, start-containers.sh), use relative paths and dynamic workspace detection:
+
+3. Document Required Secrets and Setup
+Add to your README.md:
+
+4. Use Relative Paths in Scripts
+Already covered above—use SCRIPT_DIR and cd [devcontainer-template](http://_vscodecontentref_/3)" in all scripts.
+
+5. Avoid Hardcoding Image Tags
+In your docker-compose.yaml, use build arguments or defaults for image tags:
+
+Document these variables in your README.md:
+
+6. Add a .devcontainer.json Example
+Create .devcontainer/devcontainer.json.example:
+
+7. Keep Docker Compose Flexible
+Add to your README.md:
+
+8. Use Feature Variables
+In your devcontainer.json, add comments or documentation for feature variables:
+
+9. README Quick Start
+Add to your README.md:
+
+1 vulnerability
+hardcoded-credentials Embedding credentials in source code risks unauthorized access

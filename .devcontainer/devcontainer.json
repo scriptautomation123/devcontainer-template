@@ -2,7 +2,7 @@
   "name": "Oracle + Vault Dev Environment",
   "dockerComposeFile": "docker-compose.yaml",
   "service": "devcontainer",
-  "workspaceFolder": "/workspaces/devcontainer-template",
+  "workspaceFolder": "${localWorkspaceFolder}",
   "onCreateCommand": "bash .devcontainer/validate-env.sh && bash .devcontainer/start-containers.sh",
   "postCreateCommand": "echo 'Environment setup complete!'",
   "features": {
